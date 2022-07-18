@@ -12,21 +12,19 @@ body{
 .calculator-container{
     background-color: rgb(21, 6, 6);
     width: 80%;
+    height: 100vh;
     margin: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 10%;
     
 }
 
-/* #equal-btn{
-    width: px;
-} */
 
 
 #calculator_display{
     background-color: white;
-    /* width: 150px; */
     height: 150px;
     margin-bottom: 20px;
     
@@ -71,6 +69,7 @@ font-size: 18px;
         font-size: 20px;
         }
 
+  
 }
 
 
@@ -79,5 +78,6 @@ font-size: 18px;
     #calculator_keys_container{
         font-size: 22px;
         }
+
 
 }
