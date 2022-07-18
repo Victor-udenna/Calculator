@@ -6,13 +6,13 @@
 }
 
 body{
-    overflow: hidden;
+    height: 100vh;
+    background-color: black;
 }
 
 .calculator-container{
     background-color: rgb(21, 6, 6);
     width: 80%;
-    height: 100vh;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -20,8 +20,6 @@ body{
     padding: 10%;
     
 }
-
-
 
 #calculator_display{
     background-color: white;
@@ -79,5 +77,10 @@ font-size: 18px;
         font-size: 22px;
         }
 
+
+        .calculator-container{
+            margin-top: -150px;
+            /* height: 100vh; */
+        }
 
 }
