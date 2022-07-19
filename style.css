@@ -61,7 +61,7 @@ overflow: hidden;
 #keys_container{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 68%;
+  height: 65%;
   justify-items: center;
   padding-bottom: 20px;
   background-color: #102444;
