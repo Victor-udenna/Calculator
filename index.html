@@ -1,47 +1,51 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator javascript</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  </head>
-
-  <body>
-    <main class="calculator-container">
-      <h1>Calculator web page</h1>
-      <section class="calculator">
-        <section id="calculator_display"></section>
-        <section id="calculator_keys_container">
-          <button class="calculator_key">0</button>
-          <button class="clear_key" id="clear" data-action="clear">AC</button>
-          <button class="backspace_key" data-action="">
-            <img src="./images_icons/backspace-fill.svg" alt="" />
-          </button>
-          <button class="calculator_key">1</button>
-          <button class="calculator_key">2</button>
-          <button class="key--operator" data-action="add">+</button>
-          <button class="calculator_key">3</button>
-          <button class="calculator_key">4</button>
-          <button class="key--operator" data-action="subtract">-</button>
-          <button class="calculator_key">5</button>
-          <button class="calculator_key">6</button>
-          <button class="key--operator" data-action="multiply">&times;</button>
-          <button class="calculator_key">7</button>
-          <button class="calculator_key">8</button>
-          <button class="key--operator" data-action="divide">&divide;</button>
-          <button class="calculator_key">9</button>
-          <button class="calculator_key" id="dot" data-action="decimal">
-            .
-          </button>
-          <button class="equal-key" id="equal-btn" data-action="calculate">
-            =
-          </button>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <main class="container">
+   <header>
+    <h1>Calculator web page</h1>
+    <div class="theme_btn_container">
+        <button><img src="./images_icons/moon.svg" alt=""></button>
+        |
+        <button><img src="./images_icons/light.svg" alt=""></button>
+    </div>
+   </header>
+<section class="calculator">
+    <section id="calculator_display">
+       <span id="display-input">0</span>
         </section>
-      </section>
+        <section id="keys_container">
+        <button>C</button>
+        <button>(</button>
+        <button>)</button>
+        <button>&divide;</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>&times;</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>+</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>-</button>
+        <button>.</button>
+        <button>0</button>
+        <button><img src="./images_icons/backspace-fill.svg" alt=""></button>
+        <button>=</button>
+        </section>
+</section>
     </main>
     <script src="app.js"></script>
-  </body>
+</body>
 </html>
