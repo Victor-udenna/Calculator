@@ -89,6 +89,7 @@ overflow: hidden;
 #keys_container  .equal{
   background-color: #20c4fc;
   color: white;
+  border-radius: 5px;
 }
 /*  */
 
