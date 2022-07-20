@@ -29,13 +29,15 @@ overflow: hidden;
   padding: 15px;
   border-radius: 20px;
   margin-top: 10px;
-  background-color: rgba(255, 255, 255, 0.075);
+  background-color: #ffffff7e;
 }
 
 .theme_btn_container button{
   background-color: rgba(255, 255, 255, 0);
   border: none;
 }
+
+
 /*  */
 
 
@@ -51,6 +53,7 @@ overflow: hidden;
   align-items: flex-end;
   justify-content: flex-end;
 }
+
 
 #display-input{
   padding: 10px;
@@ -68,7 +71,7 @@ overflow: hidden;
   width: 100%;
 }
 
-#keys_container button{
+.calculator_key{
   border: none;
   background-color: #102444;
   width: 50px;
@@ -79,7 +82,13 @@ overflow: hidden;
 }
 
 #keys_container .clear{
-  color: rgb(186, 57, 57);
+  color: #ba3939;
+  border: none;
+  background-color: #102444;
+  width: 50px;
+  height: auto;
+  margin: 10px 10px 0px 10px;
+  font-size: 22px;
 }
 
 #keys_container .operator{
@@ -90,6 +99,12 @@ overflow: hidden;
   background-color: #20c4fc;
   color: white;
   border-radius: 5px;
+  width: 50px;
+  height: auto;
+  margin: 10px 10px 0px 10px;
+  font-size: 22px;
+  color: white;
+  border: none;
 }
 /*  */
 
@@ -97,6 +112,7 @@ overflow: hidden;
   #keys_container button{
     font-size: 24px;
   }
+  
 }
 
 
