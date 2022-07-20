@@ -6,6 +6,14 @@
   font-weight: 700;
 }
 
+.container{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  }
+
+
 header{
   text-align: center;
   padding: 10px;
@@ -13,12 +21,7 @@ header{
   color: white;
 }
 
-.container{
-margin: 0;
-padding: 0;
-height: 100vh;
-overflow: hidden;
-}
+
 
 /* Theme button style */
 .theme_btn_container{
@@ -42,6 +45,10 @@ overflow: hidden;
 
 
 /* CALCULATOR STYLE */
+
+.calculator{
+ color: inherit;
+}
 
 #calculator_display{
   height: 20%;
@@ -69,6 +76,7 @@ overflow: hidden;
   padding-bottom: 20px;
   background-color: #102444;
   width: 100%;
+ 
 }
 
 .calculator_key{
@@ -117,7 +125,27 @@ overflow: hidden;
 
 
 @media screen and (min-width: 1140px){
+ 
+  
+ .calculator{
+  padding-top: 10px;
+    width: 920px;
+    margin: auto;
+  }
+
+  header{
+    border-radius: 15px 15px 0px 0px;
+  }
+
   #keys_container button{
     font-size: 26px;
+  }
+
+  #keys_container{
+    border-radius: 0px 0px 15px 15px;
+  }
+
+  .container{
+    background-color: whitesmoke;
   }
 }

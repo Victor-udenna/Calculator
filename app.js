@@ -114,7 +114,7 @@ Btn.addEventListener('click', function (e) {
 
 
 // Theme
-
+let backgroundColor = document.querySelector('.container')
 let Header = document.querySelector('header');
 let inPut = document.querySelector('#calculator_display');
 let keyContainer = document.querySelector('#keys_container');
@@ -148,6 +148,7 @@ let btn_closebracket = document.querySelector('.close-bracket');
 let lightThemeBtn = document.getElementById('light_Theme');
 
 function light_Themefnc() {
+    backgroundColor.style.backgroundColor = 'gray';
     Header.style.backgroundColor = '#f2f2f4';
     Header.style.color = '#000';
     theme_btncontainer.style.backgroundColor = "";
@@ -205,7 +206,7 @@ lightThemeBtn.addEventListener('click', light_Themefnc);
 let darkThemeBtn = document.querySelector('#dark_Theme');
 
 function darktheme_function() {
-
+    backgroundColor.style.backgroundColor = 'whitesmoke';
     Header.style.backgroundColor = '#10243c';
     Header.style.color = '#fff';
     theme_btncontainer.style.backgroundColor = "";
