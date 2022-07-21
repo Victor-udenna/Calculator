@@ -53,20 +53,26 @@ header{
 #calculator_display{
   height: 20%;
   background-color: #10243c;
-  border-bottom:2px solid #20c4fc;
   width: 100%;
   box-shadow: 0 8px 2px -2px #20c4fc;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  border: none;
+  border-bottom:2px solid #20c4fc;
+  text-align: right;
+font-size: 40px;
+padding: 10px;
+color: #fff;
+
 }
 
 
-#display-input{
+/* #display-input{
   padding: 10px;
   color: white;
   font-size: 40px;
-}
+} */
 
 #keys_container{
   display: grid;
@@ -89,7 +95,7 @@ header{
   color: white;
 }
 
-#keys_container .clear{
+#keys_container .all-clear{
   color: #ba3939;
   border: none;
   background-color: #102444;
@@ -103,7 +109,7 @@ header{
   color:#20c4fc;
 }
 
-#keys_container  .equal{
+#keys_container  .equal-sign{
   background-color: #20c4fc;
   color: white;
   border-radius: 5px;
@@ -124,7 +130,7 @@ header{
 }
 
 
-@media screen and (min-width: 1140px){
+@media screen and (min-width: 1024px){
  
   
  .calculator{

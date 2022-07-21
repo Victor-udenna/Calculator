@@ -1,115 +1,14 @@
-// // 0
-// let btn_0 = document.querySelector('.zero')
-
-// function disPlay_0() {
-//   return console.log(btn_0.innerText)
-// }
-// btn_0.addEventListener('click', disPlay_0)
-// // 1
-// let btn_1 = document.querySelector('.one')
-// function disPlay_1() {
-//   return console.log(btn_1.innerText)
-// }
-
-// btn_1.addEventListener('click', disPlay_1)
-// // 2
-// let btn_2 = document.querySelector('.two')
-// function disPlay_2() {
-//   return console.log(btn_2.innerText)
-// }
-// btn_2.addEventListener('click', disPlay_2)
-// // 3
-// let btn_3 = document.querySelector('.three')
-// function disPlay_3() {
-//   return console.log(btn_3.innerText)
-// }
-// btn_3.addEventListener('click', disPlay_3)
-// // 4
-// let btn_4 = document.querySelector('.four')
-// function disPlay_4() {
-//   return console.log(btn_4.innerText)
-// }
-// btn_4.addEventListener('click', disPlay_4)
-// // 5
-// let btn_5 = document.querySelector('.five')
-// function disPlay_5() {
-//   return console.log(btn_5.innerText)
-// }
-// btn_5.addEventListener('click', disPlay_5)
-// // 6
-// let btn_6 = document.querySelector('.six')
-// function disPlay_6() {
-//   return console.log(btn_6.innerText)
-// }
-// btn_6.addEventListener('click', disPlay_6)
-// // 7
-// let btn_7 = document.querySelector('.seven')
-// function disPlay_7() {
-//   return console.log(btn_7.innerText)
-// }
-// btn_7.addEventListener('click', disPlay_7)
-// // 8
-// let btn_8 = document.querySelector('.eight')
-// function disPlay_8() {
-//   return console.log(btn_8.innerText)
-// }
-// btn_8.addEventListener('click', disPlay_8)
-// // 9
-// let btn_9 = document.querySelector('.nine')
-// function disPlay_9() {
-//   return console.log(btn_9.innerText)
-// }
-// btn_9.addEventListener('click', disPlay_9)
-// // dot
-// let btn_dot = document.querySelector('#dot')
-// function disPlay_dot() {
-//   return console.log(btn_dot.innerText)
-// }
-// btn_dot.addEventListener('click', disPlay_dot)
-// // Plus
-// let btn_plus = document.querySelector('.add')
-// function disPlay_plus() {
-//   return console.log(btn_plus.innerText)
-// }
-// btn_plus.addEventListener('click', disPlay_plus)
-// // subtract
-// let btn_subtract = document.querySelector('.subtract')
-// function disPlay_subtract() {
-//   return console.log(btn_subtract.innerText)
-// }
-// btn_subtract.addEventListener('click', disPlay_subtract)
-// // multiply
-// let btn_times = document.querySelector('.times')
-// function disPlay_times() {
-//   return console.log(btn_times.innerText)
-// }
-// btn_times.addEventListener('click', disPlay_times)
-// // divide
-// let btn_divide = document.querySelector('.divide')
-// function disPlay_divide() {
-//   return console.log(btn_divide.innerText)
-// }
-// btn_divide.addEventListener('click', disPlay_divide)
 
 
-// document.querySelector('.five').addEventListener('click', function (e) {
+// let disPlay = document.getElementById('calculator_display');
+// let Btn = document.querySelector('#keys_container');
+// Btn.addEventListener('click', function (e) {
 //     const target = e.target;
-//     if (target.matches('button')) {
-//         target.style.backgroundColor = 'green'
-//         console.log(5);
+//     if (target.matches('.calculator_key')) {
+//        disPlay.append(e.target.innerText) 
 //     }
-// })
-// console.log(112);
-
-let disPlay = document.getElementById('display-input');
-let Btn = document.querySelector('#keys_container');
-Btn.addEventListener('click', function (e) {
-    const target = e.target;
-    if (target.matches('.calculator_key')) {
-       disPlay.append(e.target.innerText) 
-    }
     
-})
+// })
 
 
 
@@ -119,7 +18,6 @@ let Header = document.querySelector('header');
 let inPut = document.querySelector('#calculator_display');
 let keyContainer = document.querySelector('#keys_container');
 let theme_btncontainer = document.querySelector('.theme_btn_container');
-let out_put = document.querySelector('#display-input');
 let themeContainer = document.querySelector('.theme_btn_container');
 // BUTTON VARIABLE
 let btn_0 = document.querySelector('.zero');
@@ -136,8 +34,8 @@ let btn_plus = document.querySelector('.plus');
 let btn_minus = document.querySelector('.minus');
 let btn_divide = document.querySelector('.divide');
 let btn_times = document.querySelector('.times');
-let btn_clear = document.querySelector('.clear');
-let btn_dot = document.querySelector('.dot');
+let btn_clear = document.querySelector('.all-clear');
+let btn_dot = document.querySelector('.decimal');
 let btn_backspace = document.querySelector('.backspace');
 let btn_openbracket = document.querySelector('.open-bracket');
 let btn_closebracket = document.querySelector('.close-bracket');
@@ -154,8 +52,8 @@ function light_Themefnc() {
     theme_btncontainer.style.backgroundColor = "";
     inPut.style.backgroundColor = '#f2f2f4';
     inPut.style.borderColor = '#f2f2f4';
+    inPut.style.color = '#000';
     keyContainer.style.backgroundColor = '#fff';
-    out_put.style.color = '#000';
     themeContainer.style.backgroundColor = '#5ebee0';
     themeContainer.style.color = 'white';
     // Buttons
@@ -212,8 +110,8 @@ function darktheme_function() {
     theme_btncontainer.style.backgroundColor = "";
     inPut.style.backgroundColor = '#10243c';
     inPut.style.borderColor = '#20c4fc';
+    inPut.style.color = '#fff';
     keyContainer.style.backgroundColor = '#102444';
-    out_put.style.color = '#fff';
     themeContainer.style.backgroundColor = '#ffffff7e';
     themeContainer.style.color = 'white';
     // Buttons
@@ -258,5 +156,130 @@ function darktheme_function() {
     
 }
 
-
 darkThemeBtn.addEventListener('click', darktheme_function);
+
+// END OF THEME
+
+
+////////Calculator main functionallities
+
+
+const calculator = {
+    displayValue: '0',
+    firstOperand: null,
+    waitingForSecondOperand: false,
+    operator: null,
+  };
+  
+  function inputDigit(digit) {
+    const { displayValue, waitingForSecondOperand } = calculator;
+  
+    if (waitingForSecondOperand === true) {
+      calculator.displayValue = digit;
+      calculator.waitingForSecondOperand = false;
+    } else {
+      calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+    }
+  
+    console.log(calculator);
+  }
+  
+function inputDecimal(dot) {
+    
+    if (calculator.waitingForSecondOperand === true) {
+        calculator.displayValue = '0.'
+        calculator.waitingForSecondOperand = false;
+        return
+    }
+
+    if (!calculator.displayValue.includes(dot)) {
+      calculator.displayValue += dot;
+    }
+  }
+  
+  function handleOperator(nextOperator) {
+    const { firstOperand, displayValue, operator } = calculator
+    const inputValue = parseFloat(displayValue);
+    
+    if (operator && calculator.waitingForSecondOperand)  {
+      calculator.operator = nextOperator;
+      console.log(calculator);
+      return;
+    }
+  
+  
+    if (firstOperand == null && !isNaN(inputValue)) {
+      calculator.firstOperand = inputValue;
+    } else if (operator) {
+      const result = calculate(firstOperand, inputValue, operator);
+  
+      calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
+      calculator.firstOperand = result;
+    }
+  
+    calculator.waitingForSecondOperand = true;
+    calculator.operator = nextOperator;
+    console.log(calculator);
+  }
+  
+  function calculate(firstOperand, secondOperand, operator) {
+    if (operator === '+') {
+      return firstOperand + secondOperand;
+    } else if (operator === '-') {
+      return firstOperand - secondOperand;
+    } else if (operator === '*') {
+      return firstOperand * secondOperand;
+    } else if (operator === '/') {
+      return firstOperand / secondOperand;
+    }
+  
+    return secondOperand;
+  }
+  
+  function resetCalculator() {
+    calculator.displayValue = '0';
+    calculator.firstOperand = null;
+    calculator.waitingForSecondOperand = false;
+    calculator.operator = null;
+    console.log(calculator);
+  }
+  
+  function updateDisplay() {
+    const display = document.querySelector('#calculator_display');
+    display.value = calculator.displayValue;
+  }
+  
+  updateDisplay();
+  
+  const keys = document.querySelector('#keys_container');
+  keys.addEventListener('click', event => {
+    const { target } = event;
+    const { value } = target;
+    if (!target.matches('button')) {
+      return;
+    }
+  
+    switch (value) {
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+      case '=':
+        handleOperator(value);
+        break;
+      case '.':
+        inputDecimal(value);
+        break;
+      case 'all-clear':
+        resetCalculator();
+        break;
+      default:
+        if (Number.isInteger(parseFloat(value))) {
+          inputDigit(value);
+        }
+    }
+  
+    updateDisplay();
+  });
+
+

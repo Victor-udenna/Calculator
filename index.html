@@ -15,35 +15,33 @@
     <header>
         <h1>Calculator web page</h1>
         <div class="theme_btn_container">
-            <button id="dark_Theme"><img src="./images_icons/moon-ligt.svg" alt=""></button>
+            <button type="button" id="dark_Theme"><img src="./images_icons/moon-ligt.svg" alt=""></button type="button">
             |
-            <button id="light_Theme"><img src="./images_icons/sun-light.svg" alt=""></button>
+            <button type="button" id="light_Theme"><img src="./images_icons/sun-light.svg" alt=""></button type="button">
         </div>
        </header>
-    <section id="calculator_display">
-       <span id="display-input">0</span>
-        </section>
+     <input type="text" id="calculator_display" value="0" disabled>
         <section id="keys_container">
-        <button class="clear">C</button>
-        <button class="operator calculator_key open-bracket">(</button>
-        <button class="operator calculator_key close-bracket">)</button>
-        <button class="operator calculator_key divide">&divide;</button>
-        <button class="calculator_key one">1</button>
-        <button class="calculator_key two">2</button>
-        <button class="calculator_key three">3</button>
-        <button class="operator calculator_key times">&times;</button>
-        <button class="calculator_key four">4</button>
-        <button class="calculator_key five">5</button>
-        <button class="calculator_key six">6</button>
-        <button class="operator calculator_key plus">+</button>
-        <button class="calculator_key seven">7</button>
-        <button class="calculator_key eight">8</button>
-        <button class="calculator_key nine">9</button>
-        <button class="operator calculator_key minus">-</button>
-        <button class="calculator_key dot">.</button>
-        <button class="calculator_key zero">0</button>
-        <button class="calculator_key backspace"><img src="./images_icons/backspace-fill.svg" alt=""></button>
-        <button class="equal">=</button>
+        <button type="button" class="all-clear" value="clear">AC</button type="button">
+        <button type="button" class="operator calculator_key open-bracket" value="(">(</button type="button">
+        <button type="button" class="operator calculator_key close-bracket" value=")">)</button type="button">
+        <button type="button" class="operator calculator_key divide" value="/">&divide;</button type="button">
+        <button type="button" class="calculator_key one" value="1">1</button type="button">
+        <button type="button" class="calculator_key two" value="2">2</button type="button">
+        <button type="button" class="calculator_key three" value="3">3</button type="button">
+        <button type="button" class="operator calculator_key times" value="*">&times;</button type="button">
+        <button type="button" class="calculator_key four" value="4">4</button type="button">
+        <button type="button" class="calculator_key five" value="5">5</button type="button">
+        <button type="button" class="calculator_key six" value="6">6</button type="button">
+        <button type="button" class="operator calculator_key plus" value="+">+</button type="button">
+        <button type="button" class="calculator_key seven" value="7">7</button type="button">
+        <button type="button" class="calculator_key eight" value="8">8</button type="button">
+        <button type="button" class="calculator_key nine" value="9">9</button type="button">
+        <button type="button" class="operator calculator_key minus" value="-">-</button type="button">
+        <button type="button" class="calculator_key decimal" value=".">.</button type="button">
+        <button type="button" class="calculator_key zero" value="0">0</button type="button">
+        <button type="button" class="calculator_key backspace" value="backspace"><img src="./images_icons/backspace-fill.svg" alt=""></button type="button">
+        <button type="button" class="equal-sign operator" value="=">=</button type="button">
         </section>
 </section>
     </main>
