@@ -213,7 +213,7 @@ function inputDecimal(dot) {
     } else if (operator) {
       const result = calculate(firstOperand, inputValue, operator);
   
-      calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
+      calculator.displayValue = `${parseFloat(result.toFixed())}`;
       calculator.firstOperand = result;
     }
   
@@ -260,26 +260,27 @@ function inputDecimal(dot) {
     }
   
     switch (value) {
-      case '+':
-      case '-':
-      case '*':
-      case '/':
-      case '=':
-        handleOperator(value);
-        break;
-      case '.':
-        inputDecimal(value);
-        break;
-      case 'all-clear':
-        resetCalculator();
-        break;
-      default:
-        if (Number.isInteger(parseFloat(value))) {
-          inputDigit(value);
-        }
-    }
-  
-    updateDisplay();
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+        case '=':
+          handleOperator(value);
+          break;
+        case '.':
+          inputDecimal(value);
+          break;
+        case 'all-clear':
+          resetCalculator();
+          break;
+        default:
+          // check if the key is an integer
+          if (Number.isInteger(parseFloat(value))) {
+            inputDigit(value);
+          }
+      }
+    
+      updateDisplay();
   });
 
 
