@@ -17,8 +17,8 @@
 header{
   text-align: center;
   padding: 10px;
-  background-color: #10243c;
-  color: white;
+  background-color: #f2f2f4;
+  color: rgb(0, 0, 0);
 }
 
 
@@ -32,7 +32,8 @@ header{
   padding: 15px;
   border-radius: 20px;
   margin-top: 10px;
-  background-color: #ffffff7e;
+  background-color: #20c4fc;
+  color: white;
 }
 
 .theme_btn_container button{
@@ -52,18 +53,18 @@ header{
 
 #calculator_display{
   height: 20%;
-  background-color: #10243c;
+  background-color: #f2f2f4;
   width: 100%;
-  box-shadow: 0 8px 2px -2px #20c4fc;
+  box-shadow: 0 8px 2px -2px #f2f2f4;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   border: none;
-  border-bottom:2px solid #20c4fc;
+  border-bottom:2px solid #f2f2f4;
   text-align: right;
 font-size: 40px;
 padding: 10px;
-color: #fff;
+color: black;
 
 }
 
@@ -80,25 +81,26 @@ color: #fff;
   height: 65%;
   justify-items: center;
   padding-bottom: 20px;
-  background-color: #102444;
+  /* background-color: #102444; */
+  background-color: #fff;
   width: 100%;
  
 }
 
 .calculator_key{
   border: none;
-  background-color: #102444;
+  background-color: #fff;
   width: 50px;
   height: auto;
   margin: 10px 10px 0px 10px;
   font-size: 22px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 #keys_container .all-clear{
   color: #ba3939;
   border: none;
-  background-color: #102444;
+  background-color: #ffffff;
   width: 50px;
   height: auto;
   margin: 10px 10px 0px 10px;
@@ -120,6 +122,38 @@ color: #fff;
   color: white;
   border: none;
 }
+
+/* Dark theme function */
+
+body.dark header{
+  background-color: #10243c;
+  color: white;
+}
+
+body.dark .theme_btn_container{
+ background-color: #ffffff7e;
+}
+
+
+body.dark #calculator_display{
+ background-color: #10243c;
+ color: white;
+ border-bottom: 2px solid #20c4fc;
+}
+
+body.dark #keys_container{
+  background-color: #102444;
+}
+
+body.dark .calculator_key{
+  background-color: #102444;
+  color: white;
+}
+
+body.dark #keys_container .all-clear{
+  background-color: #102444;
+}
+
 /*  */
 
 @media screen and (min-width: 768px){
@@ -152,6 +186,10 @@ color: #fff;
   }
 
   .container{
+    background-color: gray;
+  }
+
+  body.dark .container{
     background-color: whitesmoke;
   }
 }
