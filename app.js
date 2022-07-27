@@ -17,9 +17,14 @@ lightTheme.addEventListener('click', lightThemefunction);
 
 // END OF THEME
 
+// eg 2 + 4
+
+// firstoperand = 2;
+// operator = +
+//  secondoperand = 4;
 
 ////////Calculator main functionallities
-
+// displayValue hold a string value of what is being displayed
 
 const calculator = {
     displayValue: '0',
@@ -37,6 +42,7 @@ const calculator = {
       calculator.displayValue = digit;
       calculator.waitingForSecondOperand = false;
     } else {
+      // Overwrite `displayValue` if the current value is '0' otherwise append to it
       calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
     }
   
@@ -44,31 +50,41 @@ const calculator = {
   }
   
 function inputDecimal(dot) {
-    
+    // If the `displayValue` property does not contain a decimal point
     if (calculator.waitingForSecondOperand === true) {
         calculator.displayValue = '0.'
         calculator.waitingForSecondOperand = false;
         return
-    }
-
+  }
+  // fix decimal bug
+    // Append the decimal point
     if (!calculator.displayValue.includes(dot)) {
       calculator.displayValue += dot;
     }
   }
   
-  function handleOperator(nextOperator) {
-    const { firstOperand, displayValue, operator } = calculator
+function handleOperator(nextOperator) {
+
+
+      // Destructure the properties on the calculator object
+  const { firstOperand, displayValue, operator } = calculator
+   // `parseFloat` converts the string contents of `displayValue`
+  // to a floating-point number
     const inputValue = parseFloat(displayValue);
-    
-    if (operator && calculator.waitingForSecondOperand)  {
+      // verify that `firstOperand` is null and that the `inputValue`
+  // is not a `NaN` value
+  // if two operators are hit consecutively
+  if (operator && calculator.waitingForSecondOperand) {
+      // Update the firstOperand property
       calculator.operator = nextOperator;
       console.log(calculator);
       return;
     }
   
   
-    if (firstOperand == null && !isNaN(inputValue)) {
-      calculator.firstOperand = inputValue;
+  if (firstOperand == null && !isNaN(inputValue)) {
+      // Update the firstOperand property
+      calculator.firstOperand = inputValue;      // when a user hits two operator
     } else if (operator) {
       const result = calculate(firstOperand, inputValue, operator);
   
@@ -81,7 +97,7 @@ function inputDecimal(dot) {
     console.log(calculator);
   }
   
-  function calculate(firstOperand, secondOperand, operator) {
+function calculate(firstOperand, secondOperand, operator) {
     if (operator === '+') {
       return firstOperand + secondOperand;
     } else if (operator === '-') {
@@ -105,10 +121,14 @@ function inputDecimal(dot) {
   
   function updateDisplay() {
     const display = document.querySelector('#calculator_display');
+    // select the element with class of `calculator-display`
     display.value = calculator.displayValue;
+    // update the value of the element with the contents of `displayValue`
   }
   
-  updateDisplay();
+updateDisplay();
+  
+  // listening fot click event 
   
   const keys = document.querySelector('#keys_container');
   keys.addEventListener('click', event => {
